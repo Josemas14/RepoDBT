@@ -14,7 +14,7 @@ WITH src_budget AS (
 budget_silver AS (
     SELECT 
         {{dbt_utils.generate_surrogate_key(['product_id','month'])}} AS budget_id
-        , product_id
+        , {{dbt_utils.generate_surrogate_key(['product_id'])}} as product_id
         , quantity AS quantity_product
         , month
     FROM src_budget
