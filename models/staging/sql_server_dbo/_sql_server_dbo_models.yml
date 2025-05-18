@@ -1,0 +1,23 @@
+models:
+  - name: stg_sql_server_dbo_addresses
+    description: ""
+    columns:
+      - name: budget_id
+        data_type: varchar
+        description: ""
+
+      - name: zipcode
+        data_type: number
+        description: ""
+
+      - name: country::varchar(250)
+        data_type: varchar
+        description: ""
+
+      - name: address::varchar(250)
+        data_type: varchar
+        description: ""
+
+      - name: state::varchar(250)
+        data_type: varchar
+        description: ""

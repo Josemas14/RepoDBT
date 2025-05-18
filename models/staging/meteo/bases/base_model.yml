@@ -1,0 +1,119 @@
+models:
+  - name: hum_base
+    description: ""
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: cod_est
+        data_type: varchar
+        description: ""
+
+      - name: humedad_relativa_max
+        data_type: float
+        description: ""
+
+      - name: humedad_relativa_med
+        data_type: float
+        description: ""
+
+      - name: humedad_relativa_min
+        data_type: float
+        description: ""
+
+  - name: pre_base
+    description: ""
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: cod_est
+        data_type: varchar
+        description: ""
+
+      - name: lluvia
+        data_type: float
+        description: ""
+
+  - name: rad_base
+    description: ""
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: cod_est
+        data_type: varchar
+        description: ""
+
+      - name: radiacion
+        data_type: float
+        description: ""
+
+  - name: tem_base
+    description: ""
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: cod_est
+        data_type: varchar
+        description: ""
+
+      - name: t_max
+        data_type: float
+        description: ""
+
+      - name: t_min
+        data_type: float
+        description: ""
+
+      - name: t_med
+        data_type: float
+        description: ""
+
+  - name: viento_base
+    description: ""
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: cod_est
+        data_type: varchar
+        description: ""
+
+      - name: v_max
+        data_type: float
+        description: ""
+
+      - name: v_med
+        data_type: float
+        description: ""
+
+      - name: v_min
+        data_type: float
+        description: ""
+
+      - name: cv1
+        data_type: float
+        description: ""
+
+      - name: cv2
+        data_type: float
+        description: ""
+
+      - name: cv3
+        data_type: float
+        description: ""
+
+      - name: cv4
+        data_type: float
+        description: ""
+
+      - name: direccion
+        data_type: float
+        description: ""

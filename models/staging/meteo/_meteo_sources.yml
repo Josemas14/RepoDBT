@@ -1,0 +1,1586 @@
+sources:
+
+  - name: meteo # name of the source 
+    schema: meteo # this is the schema our raw data lives in
+    database: ALUMNO16_DEV_BRONZE_DB # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 1000, period: day}
+    
+    tables:
+      - name: clim_diario_2002
+        columns:
+          - name: v_med
+            data_type: varchar
+          - name: t_s_min
+            data_type: varchar
+          - name: mvma50
+            data_type: varchar
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: varchar
+          - name: h_t
+            data_type: varchar
+          - name: cv1
+            data_type: varchar
+          - name: h_hr
+            data_type: varchar
+          - name: h_ll
+            data_type: varchar
+          - name: fecha
+            data_type: varchar
+          - name: v_max
+            data_type: varchar
+          - name: t_min
+            data_type: varchar
+          - name: cv2
+            data_type: varchar
+          - name: t_s_max
+            data_type: varchar
+          - name: v_min
+            data_type: varchar
+          - name: h_d
+            data_type: varchar
+          - name: t_max
+            data_type: varchar
+          - name: h_r_max
+            data_type: varchar
+          - name: cv4
+            data_type: varchar
+          - name: radiacion
+            data_type: varchar
+          - name: h_ts
+            data_type: varchar
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: varchar
+          - name: h_r_med
+            data_type: varchar
+          - name: direccion
+            data_type: varchar
+          - name: h_r
+            data_type: varchar
+          - name: calculos
+            data_type: varchar
+          - name: mtma30
+            data_type: varchar
+          - name: mtmen7
+            data_type: varchar
+          - name: h_v
+            data_type: varchar
+          - name: mtmen0
+            data_type: varchar
+          - name: t_s_med
+            data_type: varchar
+          - name: cv3
+            data_type: varchar
+          - name: lluvia_min
+            data_type: varchar
+          - name: h_r_min
+            data_type: varchar
+
+      - name: clim_diario_2003
+        columns:
+          - name: v_med
+            data_type: varchar
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: number
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: varchar
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2004
+        columns:
+          - name: v_med
+            data_type: varchar
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: number
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2005
+        columns:
+          - name: v_med
+            data_type: varchar
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: varchar
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: varchar
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2006
+        columns:
+          - name: v_med
+            data_type: number
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: number
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2007
+        columns:
+          - name: v_med
+            data_type: number
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: varchar
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2008
+        columns:
+          - name: v_med
+            data_type: varchar
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: varchar
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2009
+        columns:
+          - name: v_med
+            data_type: number
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: varchar
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2010
+        columns:
+          - name: v_med
+            data_type: varchar
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: number
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: varchar
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2011
+        columns:
+          - name: v_med
+            data_type: varchar
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: number
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2012
+        columns:
+          - name: v_med
+            data_type: varchar
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: varchar
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2013
+        columns:
+          - name: v_med
+            data_type: varchar
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: number
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: number
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2014
+        columns:
+          - name: v_med
+            data_type: number
+          - name: t_s_min
+            data_type: number
+          - name: mvma50
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: h_d
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: number
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2015
+        columns:
+          - name: v_med
+            data_type: number
+          - name: t_s_min
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: horas
+            data_type: number
+          - name: h_t
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: h_hr
+            data_type: number
+          - name: h_ll
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_max
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: cv2
+            data_type: number
+          - name: t_s_max
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: radiacion
+            data_type: number
+          - name: h_ts
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r
+            data_type: number
+          - name: calculos
+            data_type: number
+          - name: mtma30
+            data_type: number
+          - name: mtmen7
+            data_type: number
+          - name: h_v
+            data_type: number
+          - name: mtmen0
+            data_type: number
+          - name: t_s_med
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: lluvia_min
+            data_type: number
+          - name: h_r_min
+            data_type: number
+
+      - name: clim_diario_2016
+        columns:
+          - name: cv2
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: lluvia
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: radiacion
+            data_type: varchar
+          - name: h_r_max
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_min
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: h_r_min
+            data_type: number
+          - name: v_max
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: v_med
+            data_type: varchar
+
+      - name: clim_diario_2017
+        columns:
+          - name: cv2
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: lluvia
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: radiacion
+            data_type: varchar
+          - name: h_r_max
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_min
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: h_r_min
+            data_type: number
+          - name: v_max
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: v_med
+            data_type: number
+
+      - name: clim_diario_2018
+        columns:
+          - name: sumadecv1
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: sumadecv2
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: promedioderadiacion
+            data_type: varchar
+          - name: h_r_max
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: promediodedireccion
+            data_type: number
+          - name: sumadelluvia
+            data_type: number
+          - name: sumadecv3
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: sumadecv4
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: h_r_min
+            data_type: number
+          - name: v_max
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: v_med
+            data_type: number
+
+      - name: clim_diario_2019
+        columns:
+          - name: sumadecv1
+            data_type: number
+          - name: t_min
+            data_type: number
+          - name: sumadecv2
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: promedioderadiacion
+            data_type: varchar
+          - name: h_r_max
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: promediodedireccion
+            data_type: number
+          - name: sumadelluvia
+            data_type: number
+          - name: sumadecv3
+            data_type: number
+          - name: v_min
+            data_type: number
+          - name: sumadecv4
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: h_r_min
+            data_type: number
+          - name: v_max
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: v_med
+            data_type: varchar
+
+      - name: clim_diario_2020
+        columns:
+          - name: cv2
+            data_type: number
+          - name: radicion_med
+            data_type: varchar
+          - name: t_min
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia_acum
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_min
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: h_r_min
+            data_type: number
+          - name: v_max
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: v_med
+            data_type: varchar
+
+      - name: clim_diario_2021
+        columns:
+          - name: cv2
+            data_type: number
+          - name: radicion_med
+            data_type: varchar
+          - name: t_min
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia_acum
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_min
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: h_r_min
+            data_type: number
+          - name: v_max
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: v_med
+            data_type: varchar
+
+      - name: clim_diario_2022
+        columns:
+          - name: cv2
+            data_type: number
+          - name: radicion_med
+            data_type: varchar
+          - name: t_min
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia_acum
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_min
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: h_r_min
+            data_type: number
+          - name: v_max
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: v_med
+            data_type: varchar
+
+      - name: clim_diario_2023
+        columns:
+          - name: cv2
+            data_type: number
+          - name: radicion_med
+            data_type: varchar
+          - name: t_min
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r_med
+            data_type: number
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia_acum
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_min
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: t_med
+            data_type: varchar
+          - name: h_r_min
+            data_type: number
+          - name: v_max
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: v_med
+            data_type: varchar
+
+      - name: clim_diario_2024
+        columns:
+          - name: cv2
+            data_type: number
+          - name: radicion_med
+            data_type: varchar
+          - name: t_min
+            data_type: number
+          - name: cv1
+            data_type: number
+          - name: cv3
+            data_type: number
+          - name: direccion
+            data_type: number
+          - name: h_r_med
+            data_type: varchar
+          - name: cod_est
+            data_type: varchar
+          - name: lluvia_acum
+            data_type: number
+          - name: h_r_max
+            data_type: number
+          - name: fecha
+            data_type: timestamp_ntz
+          - name: v_min
+            data_type: number
+          - name: cv4
+            data_type: number
+          - name: t_med
+            data_type: number
+          - name: h_r_min
+            data_type: number
+          - name: v_max
+            data_type: number
+          - name: t_max
+            data_type: number
+          - name: v_med
+            data_type: varchar
+
+      - name: descripcion_campos
+        columns:
+          - name: descripcion
+            data_type: varchar
+          - name: campo
+            data_type: varchar
+          - name: orden
+            data_type: number
+          - name: tipo
+            data_type: varchar
+
+      - name: identificacion_estacionesclima
+        columns:
+          - name: nombre
+            data_type: varchar
+          - name: municipio
+            data_type: number
+          - name: id_est
+            data_type: varchar
+          - name: altitud
+            data_type: number
+          - name: latitud
+            data_type: number
+          - name: longitud
+            data_type: number
+          - name: provincia
+            data_type: number
+
+      - name: raw_aemet_datos_diarios
+        columns:
+          - name: fecha
+            data_type: date
+          - name: indicativo
+            data_type: varchar
+          - name: nombre
+            data_type: varchar
+          - name: provincia
+            data_type: varchar
+          - name: altitud
+            data_type: number
+          - name: tmed
+            data_type: float
+          - name: prec
+            data_type: float
+          - name: tmin
+            data_type: float
+          - name: horatmin
+            data_type: varchar
+          - name: tmax
+            data_type: float
+          - name: horatmax
+            data_type: varchar
+          - name: dir
+            data_type: number
+          - name: velmedia
+            data_type: float
+          - name: racha
+            data_type: float
+          - name: horaracha
+            data_type: varchar
+          - name: presmax
+            data_type: float
+          - name: horapresmax
+            data_type: varchar
+          - name: presmin
+            data_type: float
+          - name: horapresmin
+            data_type: varchar
+          - name: hrmedia
+            data_type: number
+          - name: hrmax
+            data_type: number
+          - name: horahrmax
+            data_type: varchar
+          - name: hrmin
+            data_type: number
+          - name: horahrmin
+            data_type: varchar
+
+      - name: raw_aemet_inventario
+        columns:
+          - name: id_estacion
+            data_type: number
+          - name: latitud
+            data_type: varchar
+          - name: longitud
+            data_type: varchar
+          - name: altitud
+            data_type: number
+          - name: indicativo
+            data_type: varchar
+          - name: nombre
+            data_type: varchar
+          - name: indsinop
+            data_type: varchar
+          - name: provincia
+            data_type: varchar
+
+      - name: raw_aemet_observaciones
+        columns:
+          - name: key
+            data_type: varchar
+          - name: value
+            data_type: varchar
+          - name: index
+            data_type: float
+          - name: code
+            data_type: varchar
+          - name: units
+            data_type: varchar
+          - name: scale
+            data_type: float
+          - name: reference
+            data_type: float
+          - name: width
+            data_type: float
+
+      - name: raw_aemet_resumen_climato
+        columns:
+          - name: idema
+            data_type: varchar
+          - name: lon
+            data_type: float
+          - name: fint
+            data_type: timestamp_tz
+          - name: prec
+            data_type: float
+          - name: alt
+            data_type: float
+          - name: vmax
+            data_type: float
+          - name: vv
+            data_type: float
+          - name: dv
+            data_type: float
+          - name: lat
+            data_type: float
+          - name: dmax
+            data_type: float
+          - name: ubi
+            data_type: varchar
+          - name: hr
+            data_type: float
+          - name: tamin
+            data_type: float
+          - name: ta
+            data_type: float
+          - name: tamax
+            data_type: float
+          - name: pres
+            data_type: float
+          - name: stdvv
+            data_type: float
+          - name: ts
+            data_type: float
+          - name: pres_nmar
+            data_type: float
+          - name: tpr
+            data_type: float
+          - name: vis
+            data_type: float
+          - name: stddv
+            data_type: float
+          - name: inso
+            data_type: float
+          - name: tss5cm
+            data_type: float
+          - name: psoltp
+            data_type: float
+          - name: pliqt
+            data_type: float
+          - name: rviento
+            data_type: float
+          - name: vmaxu
+            data_type: float
+          - name: dvu
+            data_type: float
+          - name: pacutp
+            data_type: float
+          - name: vvu
+            data_type: float
+          - name: stdvvu
+            data_type: float
+          - name: stddvu
+            data_type: float
+          - name: dmaxu
+            data_type: float
+          - name: tss20cm
+            data_type: float
+          - name: geo925
+            data_type: float
+          - name: geo850
+            data_type: float
+          - name: nieve
+            data_type: float
+          - name: anyo
+            data_type: float
+          - name: media_temperatura
+            data_type: float
+          - name: precipitacion_acumulada
+            data_type: float
