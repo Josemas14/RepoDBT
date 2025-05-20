@@ -5,22 +5,36 @@ models:
       - name: fecha
         data_type: date
         description: ""
-
+        tests:
+          - not_null:
+             severity: warn
       - name: cod_est
         data_type: varchar
         description: ""
-
+        tests:
+          - not_null:
+             severity: warn
+        
       - name: humedad_relativa_max
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: humedad_relativa_med
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: humedad_relativa_min
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
   - name: pre_base
     description: ""
@@ -28,14 +42,23 @@ models:
       - name: fecha
         data_type: date
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: cod_est
         data_type: varchar
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: lluvia
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
   - name: rad_base
     description: ""
@@ -43,14 +66,23 @@ models:
       - name: fecha
         data_type: date
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: cod_est
         data_type: varchar
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: radiacion
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
   - name: tem_base
     description: ""
@@ -58,22 +90,37 @@ models:
       - name: fecha
         data_type: date
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: cod_est
         data_type: varchar
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: t_max
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: t_min
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: t_med
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
   - name: viento_base
     description: ""
@@ -81,39 +128,69 @@ models:
       - name: fecha
         data_type: date
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: cod_est
         data_type: varchar
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: v_max
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: v_med
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: v_min
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: cv1
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: cv2
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: cv3
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: cv4
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn
 
       - name: direccion
         data_type: float
         description: ""
+        tests:
+          - not_null:
+             severity: warn

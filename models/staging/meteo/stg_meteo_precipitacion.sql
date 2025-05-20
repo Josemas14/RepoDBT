@@ -1,6 +1,7 @@
 {{ config(
-    materialized='table'
+    materialized='view'
 ) }}
+
 
 WITH precipitacion_silver AS (
 
@@ -8,11 +9,19 @@ WITH precipitacion_silver AS (
         fecha,
         cod_est,
         {{dbt_utils.generate_surrogate_key(['fecha','cod_est','lluvia'])}}::VARCHAR(250) AS lluvia_id,
-        ROUND(lluvia, 2) AS precipitacion,
+        COALESCE(ROUND(lluvia, 2),0) AS precipitacion,
       
 
     FROM {{ ref('pre_base') }}
 
+),
+duplicados AS (
+    {{ dbt_utils.deduplicate(
+        relation='precipitacion_silver',
+        partition_by='lluvia_id',
+        order_by='lluvia_id'
+    ) }}
 )
 
-SELECT * FROM precipitacion_silver
+SELECT * FROM duplicados
+ 

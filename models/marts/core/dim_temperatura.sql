@@ -1,7 +1,5 @@
 {{ config(
-    materialized='table',
-    database='ALUMNO16_DEV_GOLD_DB',
-    schema='meteo'
+    materialized='table'
 ) }}
 
 
@@ -16,3 +14,4 @@ SELECT
         ELSE 'Cálida'
     END AS categoria_temperatura
 FROM {{ ref('stg_meteo_temperatura') }}
+

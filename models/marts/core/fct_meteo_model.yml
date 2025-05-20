@@ -1,0 +1,286 @@
+models:
+  - name: dim_estacion
+    description: ""
+    columns:
+      - name: estacion_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: primary_key
+
+      - name: nombre_municipio
+        data_type: varchar
+        description: ""
+        
+
+      - name: cod_est
+        data_type: varchar
+        description: ""
+
+      - name: altitud
+        data_type: float
+        description: ""
+
+      - name: latitud
+        data_type: float
+        description: ""
+
+      - name: longitud
+        data_type: float
+        description: ""
+
+      - name: id_provincia
+        data_type: number
+        description: ""
+        
+
+      - name: id_municipio
+        data_type: number
+        description: ""
+
+      - name: cod_provincia
+        data_type: varchar
+        description: ""
+
+      - name: provincia
+        data_type: varchar
+        description: ""
+
+  - name: dim_fecha
+    description: ""
+    columns:
+      - name: fecha
+        data_type: timestamp_ntz
+        description: ""
+      
+      - name: fecha_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: primary_key
+
+      - name: anio
+        data_type: number
+        description: ""
+
+      - name: mes
+        data_type: number
+        description: ""
+
+      - name: nombre_mes
+        data_type: varchar
+        description: ""
+
+      - name: dia_mes
+        data_type: number
+        description: ""
+
+      - name: dia_semana
+        data_type: number
+        description: ""
+
+      - name: nombre_dia_semana
+        data_type: varchar
+        description: ""
+
+      - name: tipo_dia
+        data_type: varchar
+        description: ""
+
+      - name: trimestre
+        data_type: number
+        description: ""
+
+      - name: estacion
+        data_type: varchar
+        description: ""
+
+  
+
+  - name: dim_humedad
+    description: ""
+    columns:
+      - name: humedad_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: primary_key
+
+      - name: humedad_relativa_max
+        data_type: float
+        description: ""
+
+      - name: humedad_relativa_min
+        data_type: float
+        description: ""
+
+      - name: humedad_relativa_med
+        data_type: float
+        description: ""
+
+      - name: humedad_categoria
+        data_type: varchar
+        description: ""
+
+  - name: dim_precipitacion
+    description: ""
+    columns:
+      - name: lluvia_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: primary_key
+
+      - name: categoria_lluvia
+        data_type: varchar
+        description: ""
+
+      - name: precipitacion
+        data_type: float
+        description: ""
+
+  - name: dim_radiacion
+    description: ""
+    columns:
+      - name: radiacion_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: primary_key
+
+      - name: radiacion
+        data_type: float
+        description: ""
+
+      - name: nivel_radiacion
+        data_type: varchar
+        description: ""
+
+ 
+  - name: dim_temperatura
+    description: ""
+    columns:
+      - name: temperatura_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: primary_key
+
+      - name: temperatura_max
+        data_type: float
+        description: ""
+
+      - name: temperatura_min
+        data_type: float
+        description: ""
+
+      - name: temperatura_med
+        data_type: float
+        description: ""
+
+      - name: categoria_temperatura
+        data_type: varchar
+        description: ""
+
+  - name: dim_viento
+    description: ""
+    columns:
+      - name: viento_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: primary_key
+
+      - name: viento_max
+        data_type: float
+        description: ""
+
+      - name: viento_min
+        data_type: float
+        description: ""
+
+      - name: viento_med
+        data_type: float
+        description: ""
+
+      - name: minutos_direccion_1
+        data_type: float
+        description: ""
+
+      - name: minutos_direccion_2
+        data_type: float
+        description: ""
+
+      - name: minutos_direccion_3
+        data_type: float
+        description: ""
+
+      - name: minutos_direccion_4
+        data_type: float
+        description: ""
+
+      - name: direccion
+        data_type: float
+        description: ""
+
+      - name: categoria_viento
+        data_type: varchar
+        description: "" 
+
+  - name: fact_meteo
+    description: ""
+    columns:
+      - name: inclremental
+        data_type: int
+        description: ""
+        
+      - name: meteo_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: primary_key
+      - name: fecha
+        data_type: date
+        description: ""
+        
+      - name: fecha_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: foreign_key
+
+      - name: estacion_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: foreign_key
+
+      - name: humedad_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: foreign_key
+
+      - name: lluvia_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: foreign_key
+
+      - name: radiacion_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: foreign_key
+
+      - name: temperatura_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: foreign_key
+
+      - name: viento_id
+        data_type: varchar
+        description: ""
+        constraints:
+          - type: foreign_key

@@ -1,3 +1,6 @@
+{{ config(
+    materialized='view'
+) }}
 with base_2002 as (
 
     select 

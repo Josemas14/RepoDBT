@@ -1,6 +1,7 @@
 {{ config(
-    materialized='table'
+    materialized='incremental'
 ) }}
+
 
 WITH estacion_id_silver AS (
 
@@ -27,6 +28,7 @@ WITH estacion_id_silver AS (
         END AS provincia
 
     FROM {{ source('meteo', 'identificacion_estacionesclima') }}
+    Where MUNICIPIO is not null and cod_est is not null
 
 )
 

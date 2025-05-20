@@ -1,7 +1,6 @@
 {{ config(
-    materialized='table',
-    database='ALUMNO16_DEV_GOLD_DB',
-    schema='meteo'
+    materialized='incremental'
+    
 ) }}
 
 SELECT

@@ -1,12 +1,10 @@
 {{ config(
-    materialized='table',
-    database='ALUMNO16_DEV_GOLD_DB',
-    schema='meteo'
+    materialized='table'
 ) }}
 WITH date_spine AS (
 
     SELECT 
-        DATEADD(DAY, SEQ4(), '2000-01-01') AS fecha
+        DATEADD(DAY, SEQ4(), '2002-01-01') AS fecha
     FROM TABLE(GENERATOR(ROWCOUNT => 20000)) -- Ajusta según el rango de fechas que necesites
 
 ),
@@ -15,6 +13,7 @@ final AS (
 
     SELECT
         fecha,
+        {{ dbt_utils.generate_surrogate_key(['fecha']) }}::VARCHAR(250) AS fecha_id,
         EXTRACT(YEAR FROM fecha) AS anio,
         EXTRACT(MONTH FROM fecha) AS mes,
         TO_CHAR(fecha, 'Month') AS nombre_mes,

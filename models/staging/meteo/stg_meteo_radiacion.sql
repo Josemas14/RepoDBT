@@ -1,5 +1,5 @@
 {{ config(
-    materialized='table'
+    materialized='view'
 ) }}
 
 WITH Radiacion_silver AS (
@@ -8,11 +8,19 @@ WITH Radiacion_silver AS (
         fecha,
         cod_est,
         {{dbt_utils.generate_surrogate_key(['fecha','cod_est','RADIACION'])}}::VARCHAR(250) AS radiacion_id,
-        ROUND(RADIACION, 2) AS Radiacion
+        COALESCE(ROUND(RADIACION, 2),0) AS Radiacion
       
 
     FROM {{ ref('rad_base') }}
 
+),
+duplicados AS (
+    {{ dbt_utils.deduplicate(
+        relation='Radiacion_silver',
+        partition_by='radiacion_id',
+        order_by='radiacion_id'
+    ) }}
 )
 
-SELECT * FROM Radiacion_silver
+
+SELECT * FROM duplicados
