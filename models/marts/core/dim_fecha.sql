@@ -1,6 +1,9 @@
 {{ config(
-    materialized='table'
+    materialized='table',
+    database='ALUMNO16_PRO_GOLD_DB',
+    schema='meteo'
 ) }}
+
 WITH date_spine AS (
 
     SELECT 

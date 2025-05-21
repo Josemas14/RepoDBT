@@ -1,3 +1,9 @@
+{{ config(
+    materialized='table',
+    database='ALUMNO16_PRO_GOLD_DB',
+    schema='analytics'
+) }}
+
 WITH temp_granada AS (
     SELECT 
         f.fecha,

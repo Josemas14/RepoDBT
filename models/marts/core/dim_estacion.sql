@@ -1,8 +1,8 @@
 {{ config(
-    materialized='incremental'
-    
+    materialized='incremental',
+    database='ALUMNO16_PRO_GOLD_DB',
+    schema='meteo'
 ) }}
-
 SELECT
     estacion_id,
     nombre_municipio,

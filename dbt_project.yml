@@ -41,18 +41,18 @@ models:
 
     staging:
       +materialized: view
-      +database: "{{ env_var('DBT_ENVIRONMENTS') }}_SILVER_DB"
+      +database: "ALUMNO16_PRO_SILVER_DB"
       meteo:
         +schema: meteo
       
     marts:
       +materialized: table
-      +database: "{{ env_var('DBT_ENVIRONMENTS') }}_GOLD_DB"
+      +database: "ALUMNO16_PRO_GOLD_DB"
       core:
         +schema: core
 seeds:
   +schema: seed_data
-  +database: "{{ env_var('DBT_ENVIRONMENTS') }}_BRONZE_DB"        
+  +database: "ALUMNO16_PRO_BRONZE_DB"        
 snapshots:
   +transient: false
   +target_database: "{{ env_var('DBT_ENVIRONMENTS') }}_SILVER_DB"

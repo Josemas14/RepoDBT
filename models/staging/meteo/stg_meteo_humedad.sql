@@ -1,5 +1,7 @@
 {{ config(
-    materialized='table'
+    materialized='view',
+    database='ALUMNO16_PRO_SILVER_DB',
+    schema='meteo'
 ) }}
 
 

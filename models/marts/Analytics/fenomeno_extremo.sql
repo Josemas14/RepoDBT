@@ -1,9 +1,8 @@
 {{ config(
     materialized='table',
-    database='ALUMNO16_DEV_GOLD_DB',
-    schema='meteo'
+    database='ALUMNO16_PRO_GOLD_DB',
+    schema='analytics'
 ) }}
-
 WITH hechos AS (
     SELECT * FROM {{ ref('fact_meteo') }}
 ),

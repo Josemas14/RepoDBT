@@ -1,6 +1,9 @@
 {{ config(
-    materialized='view'
+    materialized='view',
+    database='ALUMNO16_PRO_SILVER_DB',
+    schema='meteo'
 ) }}
+
 
 with base_2002 as (
 
