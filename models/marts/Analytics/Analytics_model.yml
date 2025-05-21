@@ -1,0 +1,86 @@
+models:
+  - name: fenomeno_extremo
+    description: ""
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: estacion_id
+        data_type: varchar
+        description: ""
+
+      - name: fenomeno_ola_calor
+        data_type: varchar
+        description: ""
+
+      - name: fenomeno_helada
+        data_type: varchar
+        description: ""
+
+      - name: fenomeno_lluvia_extrema
+        data_type: varchar
+        description: ""
+
+      - name: fenomeno_racha_viento
+        data_type: varchar
+        description: ""
+
+      - name: fenomeno_radiacion_alta
+        data_type: varchar
+        description: ""
+
+  - name: precipitacion_anual_provincia
+    description: ""
+    
+  - name: recomendacion
+    description: ""
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: estacion_id
+        data_type: varchar
+        description: ""
+
+      - name: recomendacion_ropa
+        data_type: varchar
+        description: ""
+
+      - name: recomendacion_paraguas
+        data_type: varchar
+        description: ""
+
+      - name: actividad_recomendada
+        data_type: varchar
+        description: ""
+
+  - name: precipitacion_anual
+    description: ""     
+
+  - name: tem_max_granada
+    description: ""
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: temperatura_max
+        data_type: float
+        description: ""
+
+  - name: temperatura_media_anual
+    description: ""
+    columns:
+      - name: anio
+        data_type: number
+        description: ""
+
+      - name: cod_provincia
+        data_type: varchar
+        description: ""
+
+      - name: temperatura_media_anual
+        data_type: float
+        description: ""
