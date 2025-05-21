@@ -1,0 +1,3396 @@
+sources:
+
+  - name: meteo # name of the source 
+    schema: meteo # this is the schema our raw data lives in
+    database: ALUMNO16_DEV_BRONZE_DB # this is the name of our database
+
+    quoting:
+      database: false
+      schema: false
+      identifier: false
+
+    freshness:
+      warn_after: {count: 24, period: hour}
+      error_after: {count: 1000, period: day}
+    
+    tables:
+      - name: clim_diario_2002
+        columns:
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2003
+        columns:
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2004
+        columns:
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2005
+        columns:
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2006
+        columns:
+          - name: v_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2007
+        columns:
+          - name: v_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2008
+        columns:
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2009
+        columns:
+          - name: v_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2010
+        columns:
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2011
+        columns:
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2012
+        columns:
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2013
+        columns:
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2014
+        columns:
+          - name: v_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mvma50
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_d
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2015
+        columns:
+          - name: v_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: horas
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_t
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_hr
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ll
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_ts
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: calculos
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtma30
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen7
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_v
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: mtmen0
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_s_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2016
+        columns:
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2017
+        columns:
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radiacion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2018
+        columns:
+          - name: sumadecv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: sumadecv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: promedioderadiacion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: promediodedireccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: sumadelluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: sumadecv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: sumadecv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2019
+        columns:
+          - name: sumadecv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: sumadecv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: promedioderadiacion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: promediodedireccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: sumadelluvia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: sumadecv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: sumadecv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2020
+        columns:
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radicion_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_acum
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2021
+        columns:
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radicion_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_acum
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2022
+        columns:
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radicion_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_acum
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2023
+        columns:
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radicion_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_acum
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: clim_diario_2024
+        columns:
+          - name: cv2
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: radicion_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv1
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv3
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: direccion
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cod_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: lluvia_acum
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: fecha
+            data_type: timestamp_ntz
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: cv4
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_med
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: h_r_min
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: t_max
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: v_med
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: descripcion_campos
+        columns:
+          - name: descripcion
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: campo
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: orden
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: tipo
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+
+      - name: identificacion_estacionesclima
+        columns:
+          - name: nombre
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: municipio
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: id_est
+            data_type: varchar
+            tests:
+              - not_null:
+                 severity: warn
+          - name: altitud
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: latitud
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: longitud
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+          - name: provincia
+            data_type: number
+            tests:
+              - not_null:
+                 severity: warn
+

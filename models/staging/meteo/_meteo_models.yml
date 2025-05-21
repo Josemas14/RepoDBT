@@ -1,0 +1,250 @@
+models:
+  - name: stg_meteo_humedad
+    description: "Humedad relativa diaria por estación"
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: cod_est
+        description: "Foreign key to stg_meteo_ide_estacion.cod_est"
+        tests:
+          - relationships:
+              to: ref('models/staging/meteo/stg_meteo_ide_estacion.sql')
+              field: cod_est
+
+      - name: humedad_id
+        data_type: varchar
+        description: "Primary Key"
+        tests:
+          - not_null
+          - unique
+          
+
+      - name: humedad_relativa_max
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+      - name: humedad_relativa_min
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+      - name: humedad_relativa_med
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+  - name: stg_meteo_viento
+    description: "Datos de viento diario por estación"
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: cod_est
+        description: "Foreign key to stg_meteo_ide_estacion.cod_est"
+        tests:
+          - relationships:
+              to: ref('models/staging/meteo/stg_meteo_ide_estacion.sql')
+              field: cod_est
+
+      - name: viento_id
+        data_type: varchar
+        description: "Primary Key"
+        tests:
+          - not_null
+          - unique
+
+      - name: viento_max
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+      - name: viento_min
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+      - name: viento_med
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+      - name: minutos_direccion_1
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+      - name: minutos_direccion_2
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+      - name: minutos_direccion_3
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+      - name: minutos_direccion_4
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+      - name: direccion
+        data_type: float
+        description: ""
+
+  - name: stg_meteo_temperatura
+    description: "Datos de temperatura diaria por estación"
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: cod_est
+        description: "Foreign key to stg_meteo_ide_estacion.cod_est"
+        tests:
+          - relationships:
+              to: ref('models/staging/meteo/stg_meteo_ide_estacion.sql')
+              field: cod_est
+
+      - name: temperatura_id
+        data_type: varchar
+        description: "Primary Key"
+        tests:
+          - not_null
+          - unique
+
+      - name: temperatura_max
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+      - name: temperatura_min
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+      - name: temperatura_med
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+  - name: stg_meteo_precipitacion
+    description: "Datos de precipitación diaria por estación"
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: cod_est
+        description: "Foreign key to stg_meteo_ide_estacion.cod_est"
+        tests:
+          - relationships:
+              to: ref('models/staging/meteo/stg_meteo_ide_estacion.sql')
+              field: cod_est
+
+      - name: lluvia_id
+        data_type: varchar
+        description: "Primary Key"
+        tests:
+          - not_null
+          - unique
+
+      - name: precipitacion
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+  - name: stg_meteo_radiacion
+    description: "Datos de radiación diaria por estación"
+    columns:
+      - name: fecha
+        data_type: date
+        description: ""
+
+      - name: cod_est
+        description: "Foreign key to stg_meteo_ide_estacion.cod_est"
+        tests:
+          - relationships:
+              to: ref('models/staging/meteo/stg_meteo_ide_estacion.sql')
+              field: cod_est
+
+      - name: radiacion_id
+        data_type: varchar
+        description: "Primary Key"
+        tests:
+          - unique
+          - not_null
+
+      - name: radiacion
+        data_type: float
+        description: ""
+        tests:
+          - not_null
+
+  - name: stg_meteo_ide_estacion
+    description: "Información de las estaciones meteorológicas"
+    columns:
+      - name: nombre_municipio
+        data_type: varchar
+        description: ""
+        tests:
+          - not_null
+
+      - name: cod_est
+        data_type: varchar
+        description: "primarykey"
+        tests:
+          - not_null
+
+      - name: estacion_id
+        data_type: varchar
+        description: ""
+        tests:
+          - not_null
+
+      - name: altitud
+        data_type: float
+        description: ""
+
+      - name: latitud
+        data_type: float
+        description: ""
+
+      - name: longitud
+        data_type: float
+        description: ""
+
+      - name: id_provincia
+        data_type: number
+        description: ""
+
+      - name: id_municipio
+        data_type: number
+        description: ""
+
+      - name: cod_provincia
+        data_type: varchar
+        description: ""
+
+      - name: provincia
+        data_type: varchar
+        description: ""     
+  
